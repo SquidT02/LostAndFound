@@ -55,3 +55,8 @@
   width: 14px;
   height: 14px;
 }
+.input {
+  position: fixed;
+  left: 55vw;
+  top: 20vh;
+}
