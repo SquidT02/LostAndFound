@@ -1,16 +1,20 @@
 .title {
   font-size: 56px;
   color: gold;
-  margin-left: 140px;
+  top: 1.5vh;
+  left: 10vw;
+  position: fixed;
 }
 .main {
   font-size: 24px;
   color: black;
-  margin-left: 140px;
-  margin-top: -2px;
+  left: 10vw;
+  margin-top: -7.5vh;
+  position: fixed;
 }
 .nav {
   left: 120px;
+  margin-top: 15vh;
   text-align: center;
   margin-left: 120px;
 }
@@ -48,13 +52,6 @@
   margin-left: -10px;
   margin-top: -50vh;
 }
-.navigation {
-  position: fixed;
-  left: 98vw;
-  top: 98vh;
-  width: 14px;
-  height: 14px;
-}
 .input {
   position: fixed;
   left: 55vw;
@@ -66,9 +63,4 @@
   margin-left: 15vw;
   border-radius: 6px;
 }
-.titl {
-  font-size: 56px;
-  color: gold;
-  margin-left: 140px;
-  position: flex: 1 1 auto;
-}
+
