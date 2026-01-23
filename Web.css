@@ -60,3 +60,15 @@
   left: 55vw;
   top: 20vh;
 }
+.preview {
+  max-width: 30vw;
+  margin-top: 15vh;
+  margin-left: 15vw;
+  border-radius: 6px;
+}
+.titl {
+  font-size: 56px;
+  color: gold;
+  margin-left: 140px;
+  position: flex: 1 1 auto;
+}

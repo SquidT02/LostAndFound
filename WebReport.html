@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item Reporting:TVHS Lost and Found</title>
     <link href="./Web.css" rel="stylesheet">
-    <script src>./Web.js</script>
+    <script src="./chat.js" defer></script>
   </head>
   <body>
     <h class=title>TVHS Lost Item Report</h>
     <div class=topbar></div>
     <div class=sidebar></div>
-    <form id=input class=input>
-      <input type="file" name="Image of reported Item" accept="image/png, imgage/jpeg">
-
+    <form id=input class=input method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" id="image">
+      <input type="submit">
     </form>
+    <img class="preview" id="preview">
   </body>
 </html>
