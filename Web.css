@@ -60,3 +60,28 @@
   left: 55vw;
   top: 20vh;
 }
+.preview {
+  margin-left: 140px;
+  margin-top: 20px;
+}
+.item-preview {
+  border: 2px solid gold;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+}
+.results {
+  margin-left: 140px;
+  margin-top: 20px;
+}
+.item-result {
+  border: 1px solid black;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #f0f0f0;
+}
+#searchInput {
+  padding: 8px;
+  font-size: 16px;
+  width: 300px;
+}

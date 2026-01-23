@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item Reporting:TVHS Lost and Found</title>
     <link href="./Web.css" rel="stylesheet">
-    <script src>./Web.js</script>
+    <script src="./Web.js"></script>
   </head>
   <body>
     <h class=title>TVHS Lost Item Search</h>
     <div class=topbar></div>
-    <dic class=sidebar></dic>
+    <div class=sidebar></div>
+    <div class=input>
+      <input type="text" id=searchInput placeholder="Search lost items...">
+      <button onclick="searchItems()">Search</button>
+    </div>
+    <div id=results class=results></div>
   </body>
 </html>
