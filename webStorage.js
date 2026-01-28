@@ -30,7 +30,7 @@ function categorizeItem(description) {
 function storeReportedItem(formData) {
 
     const category = categorizeItem(formData.description);
-
+//needs in webReport description and name
     const item = {
         name: formData.name,
         description: formData.description,
