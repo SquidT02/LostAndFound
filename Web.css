@@ -1,16 +1,26 @@
+.home img{
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  margin-left: 12.5px;
+  top: 20px;
+  z-index: 7;
+}
 .title {
   font-size: 56px;
   color: gold;
-  top: 1.5vh;
-  left: 10vw;
+  top: 15px;
+  left: 140px;
   position: fixed;
+  z-index: 5;
 }
 .main {
   font-size: 24px;
   color: black;
-  left: 10vw;
-  margin-top: -7.5vh;
+  left: 140px;
+  margin-top: -70px;
   position: fixed;
+  z-index: 5;
 }
 .nav {
   left: 120px;
@@ -33,7 +43,7 @@
   position: relative;
 }
 .topbar {
-  z-index: -1;
+  z-index: 4;
   position: fixed;
   height: 98px;
   width: 110vw;
@@ -43,6 +53,7 @@
   border-style: solid;
 }
 .sidebar {
+  z-index: 5;
   position: fixed;
   height: 150vh;
   width: 120px;
@@ -63,4 +74,29 @@
   margin-left: 15vw;
   border-radius: 6px;
 }
-
+.search-container {
+  margin: 20px;
+  margin-top: 40;
+  border: 10px;
+}
+#searchInput {
+  width: 70vw;
+  padding: 10px;
+  font-size: 16px;
+  margin-left: 150px;
+  margin-top: 130px;
+}
+.item-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 15px;
+}
+.item-card img {
+  max-width: 200px;
+  display: block;
+  margin-top: 10px;
+}
+.results-container {
+  width: 70vw;
+  margin-left: 150px;
+}

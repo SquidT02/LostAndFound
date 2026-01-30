@@ -5,16 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item Reporting:TVHS Lost and Found</title>
     <link href="./Web.css" rel="stylesheet">
-    <script src="./Web.js" defer></script>
+    <script src="./WebReport.js" defer></script>
   </head>
   <body>
+    <a href="./Web.html" class="home"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.QIpzNtbYgQfvpddjwcGVrgHaHa%3Fpid%3DApi&f=1&ipt=cec889fe55ca313f66ac71d512ca9f4ef105e871968970dab3d75186cf26f054&ipo=images" alt=""></a>
     <h class=title>TVHS Lost Item Report</h>
     <p class=main>Thompson Valley High School Lost and Found Report Page</p>
     <div class=topbar></div>
     <div class=sidebar></div>
-    <form id=input class=input method="POST" enctype="multipart/form-data">
+    <form id=input class=input method="POST" enctype="multipart/form-data" >
       <input type="file" name="image" accept="image/*" id="image">
-      <input type="submit" class="submition">
+       
+      <label for="itemName">Item Name</label>
+      <input
+        type="text"
+        id="itemName"
+        name="itemName"
+        placeholder="e.g. Blue Hydro Flask"
+        required
+      >
+
+      <label for="description">Item Description</label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder="Describe the item (color, brand, where it was lost, etc.)"
+        rows="4"
+        required
+      ></textarea>
+
+      <input type="submit" name="submit" class="submition">
     </form>
     <img class="preview" id="preview">
   </body>
