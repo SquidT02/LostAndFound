@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Claim Item</title>
+</head>
+<body>
+
+<h2>Claim Lost Item</h2>
+
+<form action="submit_claim.php" method="POST">
+  <input type="hidden" name="item_id" id="item_id">
+
+  <label>Name:</label><br>
+  <input type="text" name="name" required><br><br>
+
+  <label>Email:</label><br>
+  <input type="email" name="email" required><br><br>
+
+  <label>Why is this item yours?</label><br>
+  <textarea name="message" required></textarea><br><br>
+
+  <button type="submit">Submit Claim</button>
+</form>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById("item_id").value = params.get("item_id");
+</script>
+
+</body>
+</html>

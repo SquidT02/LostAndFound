@@ -21,6 +21,7 @@ searchInput.addEventListener("input", async () => {
 });
 
 // Display function (mostly unchanged)
+
 function displayItems(itemList) {
   resultsContainer.innerHTML = "";
 
@@ -38,8 +39,15 @@ function displayItems(itemList) {
       <p>${item.description}</p>
       ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ""}
       <small>Reported: ${new Date(item.dateReported).toLocaleDateString()}</small>
+      <br><br>
+      <button class="claim-btn" onclick="claimItem(${item.id})">Claim</button>
     `;
 
     resultsContainer.appendChild(card);
   });
 }
+
+function claimItem(itemId) {
+  window.location.href = `claim.html?item_id=${itemId}`;
+}
+

@@ -27,6 +27,7 @@ $items = [];
 
 while ($row = $result->fetch_assoc()) {
   $items[] = [
+    "id" => $row["id"],
     "name" => $row["item_name"],
     "description" => $row["description"],
     "image" => $row["image"]
