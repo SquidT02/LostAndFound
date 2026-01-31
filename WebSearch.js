@@ -1,33 +1,30 @@
-
 const searchInput = document.getElementById("searchInput");
 const resultsContainer = document.getElementById("results");
 
-// Load items from localStorage
-function loadItems() {
-  return JSON.parse(localStorage.getItem("lostItems")) || [];
+// Load items from database
+async function loadItems(query = "") {
+  const response = await fetch(`search_items.php?q=${encodeURIComponent(query)}`);
+  return await response.json();
 }
 
-// Display all items on load
-displayItems(loadItems());
+// Display all items on page load
+(async () => {
+  const items = await loadItems();
+  displayItems(items);
+})();
 
-// Live search (no submit needed)
-searchInput.addEventListener("input", () => {
-  const query = searchInput.value.toLowerCase();
-  const items = loadItems();
-
-  const filteredItems = items.filter(item =>
-    item.name.toLowerCase().includes(query) ||
-    item.description.toLowerCase().includes(query)
-  );
-
-  displayItems(filteredItems);
+// Live search
+searchInput.addEventListener("input", async () => {
+  const query = searchInput.value;
+  const items = await loadItems(query);
+  displayItems(items);
 });
 
-// Display function
+// Display function (mostly unchanged)
 function displayItems(itemList) {
   resultsContainer.innerHTML = "";
 
-  if (itemList.length === 0) {
+  if (!itemList || itemList.length === 0) {
     resultsContainer.innerHTML = "<p>No items found.</p>";
     return;
   }
@@ -46,5 +43,3 @@ function displayItems(itemList) {
     resultsContainer.appendChild(card);
   });
 }
-
-

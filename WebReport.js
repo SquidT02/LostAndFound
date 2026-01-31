@@ -2,9 +2,6 @@ const form = document.getElementById("input");
 const imageInput = document.getElementById("image");
 const preview = document.getElementById("preview");
 
-// Load saved items or start empty
-let items = JSON.parse(localStorage.getItem("lostItems")) || [];
-
 // ---- IMAGE PREVIEW ----
 imageInput.addEventListener("change", () => {
   const file = imageInput.files[0];
@@ -21,34 +18,32 @@ imageInput.addEventListener("change", () => {
 });
 
 // ---- FORM SUBMIT ----
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const itemName = document.getElementById("itemName").value;
-  const description = document.getElementById("description").value;
-  const imageFile = imageInput.files[0];
+  const formData = new FormData();
+  formData.append("itemName", document.getElementById("itemName").value);
+  formData.append("description", document.getElementById("description").value);
+  formData.append("image", imageInput.files[0]);
 
-  // Convert image to Base64 so it can be stored
-  const reader = new FileReader();
-  reader.onload = () => {
-    const item = {
-      name: itemName,
-      description: description,
-      image: reader.result, // Base64 string
-      dateReported: new Date().toISOString()
-    };
+  try {
+    const response = await fetch("save_item.php", {
+      method: "POST",
+      body: formData
+    });
 
-    items.push(item);
-    localStorage.setItem("lostItems", JSON.stringify(items));
+    const result = await response.json();
 
-    console.log("Saved item:", item);
-
-    form.reset();
-    preview.style.display = "none";
-  };
-
-  if (imageFile) {
-    reader.readAsDataURL(imageFile);
+    if (result.status === "success") {
+      console.log("Item saved to database");
+      form.reset();
+      preview.style.display = "none";
+    } else {
+      console.error("Failed to save item");
+    }
+  } catch (err) {
+    console.error("Error:", err);
   }
 });
+
 
