@@ -48,6 +48,6 @@ function displayItems(itemList) {
 }
 
 function claimItem(itemId) {
-  window.location.href = `claim.html?item_id=${itemId}`;
+  window.location.href = `WebClaim.html?item_id=${itemId}`;
 }
 
