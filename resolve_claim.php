@@ -16,7 +16,7 @@ if (!in_array($action, ['approve', 'deny'])) {
     die("Invalid action");
 }
 
-/* Get item_id from claim */
+/* Get item_id from the claim */
 $stmt = $conn->prepare("SELECT item_id FROM item_claims WHERE id = ?");
 $stmt->bind_param("i", $claim_id);
 $stmt->execute();
@@ -31,20 +31,20 @@ $item_id = $claim['item_id'];
 
 if ($action === 'approve') {
 
-    // Delete all claims for this item
+    // Delete ALL claims for this item
     $stmt = $conn->prepare("DELETE FROM item_claims WHERE item_id = ?");
     $stmt->bind_param("i", $item_id);
     $stmt->execute();
 
-    // Delete the lost item itself
+    // Delete the item itself
     $stmt = $conn->prepare("DELETE FROM lost_items WHERE id = ?");
     $stmt->bind_param("i", $item_id);
     $stmt->execute();
 
 } else {
 
-    // Deny ONLY this claim
-    $stmt = $conn->prepare("UPDATE item_claims SET status = 'denied' WHERE id = ?");
+    // Deny = delete ONLY this claim
+    $stmt = $conn->prepare("DELETE FROM item_claims WHERE id = ?");
     $stmt->bind_param("i", $claim_id);
     $stmt->execute();
 }
