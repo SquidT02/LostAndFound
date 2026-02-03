@@ -1,84 +1,148 @@
-.home img{
-  position: fixed;
-  width: 70px;
-  height: 70px;
-  margin-left: 12.5px;
-  top: 20px;
-  z-index: 7;
-}
 .title {
-  font-size: 56px;
-  color: gold;
-  top: 15px;
-  left: 140px;
-  position: fixed;
-  z-index: 5;
+  display: flex;
+  position: absolute;
+  width: 640px;
+  height: 120px;
+  margin-left: 15vw;
+  top: 70px;
+}
+.title a {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  border-radius: 50%;
+}
+.title a img {
+  position: relative;
+  height: 100%;
+  border-radius: 50%;
+}
+.titletext {
+  position: relative;
+  display: flex;
+  height: 60%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 3%;
+  flex-direction: column;
+}
+.head {
+  font-family: "Noto Sans", sans-serif;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block;
+  font-size: 200%;
+  color: rgb(36,36,36);
 }
 .main {
-  font-size: 24px;
-  color: black;
-  left: 140px;
-  top: 45px;
-  position: fixed;
-  z-index: 5;
+  font-family: "Noto Sans", sans-serif;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block;
+  font-size: 100%;
+  color: rgb(101,101,101);
+}
+.navc {
+  position: absolute;
+  display: flex;
+  width: 105vw;
+  left: -5vw;
+  height: 80px;
+  top: 25vh;
+  justify-content: center;
+  border: solid rgb(210,210,210) 1px;
+  font-size: 18px;
 }
 .nav {
-  left: 120px;
-  margin-top: 15vh;
+  display: flex;
+  width: 48vw;
+  justify-content: space-evenly;
+}
+.nav li {
+  display: flex;
   text-align: center;
-  margin-left: 120px;
+  padding-right: 12px;
+  margin-top: -0.5%;
+  width: 40%;
 }
 .nav a {
+  margin: auto;
+  font-family: "Noto Sans", sans-serif;
   text-decoration: none;
-  font-size: 24px;
-  color: black;
-  background-color: gold;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  padding: 5px;
-  padding-right: 7px;
-  padding-left: 7px;
-  border-style: solid;
-  border-color: black;
+  color: rgb(36,36,36);
+  padding: 4%;
+  padding-right: 4.4%;
+  font-size: 1em;
+}
+.light {
+  background-color: rgb(37,42,54);
+  color: white !important;
+}
+.nav a:hover {
+  background-color: rgb(37,42,54);
+  color: white;
+}
+.nav div {
   position: relative;
+  display: inline-block;
+  margin: auto;
+  height: 70%;
+  width: 2px;
+  background-color: rgb(210,210,210);
 }
 .topbar {
   z-index: 4;
   position: fixed;
-  height: 98px;
+  height: 45px;
   width: 110vw;
-  top: 0px;
-  left: 0px;
-  background-color: grey;
-  border-style: solid;
-}
-.sidebar {
-  z-index: 5;
-  position: fixed;
-  height: 150vh;
-  width: 120px;
-  top: 0;
-  left: 0;
-  background-color: black;
-  margin-left: -10px;
-  margin-top: -50vh;
+  top: -5px;
+  left: -5px;
+  background-color: rgb(36,36,36);
 }
 .input {
-  position: fixed;
-  left: 55vw;
-  top: 20vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 35vh;
+  left: 5vw;
+  background-color: blue;
+  max-width; 50vw;
+  height: 50vh;
+  width: 35vw;
 }
 .preview {
   max-width: 30vw;
-  margin-top: 15vh;
-  margin-left: 15vw;
-  border-radius: 6px;
+  margin-top: 40vh;
+  margin-left: 55vw;
+  border: solid rgb(37,42,54) 2px;
+  border-radius: 2px;
 }
-.search-container {
-  margin: 20px;
-  margin-top: 40;
-  border: 10px;
+.nam {
+  position: relative;
+  height: 30px;
+  width: 160px;
 }
+.desc {
+  position: relative;
+  height: 200px;
+  width: 200px;
+}
+.submition {
+  width: 2vw;
+}
+
+
+
+
+
+
+
+
+
+
+
 #searchInput {
   width: 70vw;
   padding: 10px;
@@ -100,3 +164,29 @@
   width: 70vw;
   margin-left: 150px;
 }
+@media (max-width: 1000px) {
+
+  .topbar {
+    height: 35px;
+  }
+  .title {
+    height: 60px;
+    width: 320px;
+  }
+  .title a img {
+    height: 60px;
+  }
+  .head {
+    font-size: 100%;
+  }
+  .main {
+    font-size: 50%;
+  }
+  .navc {
+    height: 60px;
+    font-size: 12px;
+    top: 15vh;
+  }
+}
+
+

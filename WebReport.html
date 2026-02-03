@@ -8,34 +8,52 @@
     <script src="./WebReport.js" defer></script>
   </head>
   <body>
-    <a href="./Web.html" class="home"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.QIpzNtbYgQfvpddjwcGVrgHaHa%3Fpid%3DApi&f=1&ipt=cec889fe55ca313f66ac71d512ca9f4ef105e871968970dab3d75186cf26f054&ipo=images" alt=""></a>
-    <h class=title>TVHS Lost Item Report</h>
-    <p class=main>Thompson Valley High School Lost and Found Report Page</p>
-    <div class=topbar></div>
-    <div class=sidebar></div>
+
+  <div class=topbar></div>
+    <div class=title>
+    <a href="./Web.html"><img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1689025837/thompsonschoolsorg/khkps4dihmar0lnqjhlk/tvhs-both.png" alt=""></a>
+    <div class=titletext>
+      <h1 class=head>TVHS Lost and Found</h1>
+      <p class=main>Thompson Valley High School Lost and Found Homepage</p>
+    </div>
+    </div>
+    <div class=navc>
+    <ul class=nav>
+      <li><a class=light href="./WebReport.html">Report a Lost Item</a></li>
+      <div></div>
+      <li><a href="./WebSearch.html">Search Lost items</a></li>
+    </ul>
+  </div>
+
     <form id=input class=input method="POST" enctype="multipart/form-data" >
-      <input type="file" name="image" accept="image/*" id="image">
-       
+
       <label for="itemName">Item Name</label>
+      <div> 
       <input
         type="text"
         id="itemName"
         name="itemName"
-        placeholder="e.g. Blue Hydro Flask"
+        class=nam
+        placeholder="e.g. Water Bottle"
         required
       >
+      </div>
 
       <label for="description">Item Description</label>
+      <div>
       <textarea
         id="description"
         name="description"
+        class=desc
         placeholder="Describe the item (color, brand, where it was lost, etc.)"
         rows="4"
         required
       ></textarea>
+      </div>
 
-      <input type="submit" name="submit" class="submition">
+      <input type="file" name="image" accept="image/*" id="image">
+      <input type="submit" name="submit" class=submiton value="Report Lost Item">
     </form>
-    <img class="preview" id="preview">
+    <img class=preview id="preview">
   </body>
 </html>
