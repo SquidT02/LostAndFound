@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Claim Item</title>
+  <link rel="stylesheet" type="text/css" href="./Web.css">
 </head>
 <body>
 
-<h2>Claim Lost Item</h2>
+<div class=topbar></div>
+  <div class=title id="claimtitle">
+    <div class=titletext>
+      <h1 class=head>Claim Lost Item</h1>
+      <p class=main>Lost Item Claims Form</p>
+    </div>
+  </div>
 
-<form action="submit_claim.php" method="POST">
+<form class=input id="claimpage" action="submit_claim.php" method="POST">
   <input type="hidden" name="item_id" id="item_id">
 
   <label>Name:</label><br>

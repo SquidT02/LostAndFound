@@ -1,4 +1,6 @@
+/* Navigation and Title */
 .title {
+  z-index: 2;
   display: flex;
   position: absolute;
   width: 640px;
@@ -45,12 +47,13 @@
   color: rgb(101,101,101);
 }
 .navc {
+  z-index: 2;
   position: absolute;
   display: flex;
   width: 105vw;
   left: -5vw;
   height: 80px;
-  top: 25vh;
+  top: 220px;
   justify-content: center;
   border: solid rgb(210,210,210) 1px;
   font-size: 18px;
@@ -101,16 +104,60 @@
   left: -5px;
   background-color: rgb(36,36,36);
 }
+
+/* From Styling */
 .input {
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 35vh;
   left: 5vw;
-  background-color: blue;
-  max-width; 50vw;
+  background-color: rgb(157,162,174);
+  max-width: 50vw;
   height: 50vh;
   width: 35vw;
+}
+.input h2 {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+}
+.input input {
+  width: 40%;
+  border-radius: 5px;
+}
+.input textarea {
+  width: 94%;
+  height: 120%;
+  border-radius: 5px;
+}
+.input div {
+  margin-left: 5%;
+}
+.inputhead {
+  font-family: "Noto Sans", sans-serif;
+  margin-left: 5%;
+  margin-top: 1.5%;
+  padding-top: 1%;
+  font-size: 18px;
+  margin-right: 4.5%;
+}
+.lab {
+  margin-right: 56% !important;
+}
+input[type="file"] {
+  display: none;
+}
+.fileinput {
+  margin-left: 5.1%;
+  margin-top: 5%;
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 87%;
+  border-radius: 5px;
+  background-color: white;
 }
 .preview {
   max-width: 30vw;
@@ -118,37 +165,54 @@
   margin-left: 55vw;
   border: solid rgb(37,42,54) 2px;
   border-radius: 2px;
+  visibility: hidden;
 }
-.nam {
-  position: relative;
-  height: 30px;
-  width: 160px;
+input[type=submit] {
+  width: 23%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12%;
+  background-color: rgb(37,42,54);
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 14px;
+  border-radius: 2px;
+  font-family: sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.desc {
-  position: relative;
-  height: 200px;
-  width: 200px;
-}
-.submition {
-  width: 2vw;
+input[type=submit]:hover {
+  background-color: rgb(17,22,34);
 }
 
-
-
-
-
-
-
-
-
-
-
+/* Search Styling */
+.searchcontainer {
+  width: 100vw;
+  position: fixed;
+  display: block;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35vh;
+  z-index: 2;
+}
+.back {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  height: 40vh;
+  width: 100vw;
+}
 #searchInput {
+  z-index: 2;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   width: 70vw;
   padding: 10px;
-  font-size: 16px;
-  margin-left: 150px;
-  margin-top: 130px;
 }
 .item-card {
   border: 1px solid #ccc;
@@ -161,8 +225,18 @@
   margin-top: 10px;
 }
 .results-container {
-  width: 70vw;
-  margin-left: 150px;
+  width: 65vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+#claimpage {
+  background-color: white !important;
+}
+#claimpage label {
+  padding-top: 12px;
+}
+#claimtitle {
+  margin-left: 4vw;
 }
 @media (max-width: 1000px) {
 
@@ -170,6 +244,7 @@
     height: 35px;
   }
   .title {
+    top: 55px;
     height: 60px;
     width: 320px;
   }
@@ -185,7 +260,24 @@
   .navc {
     height: 60px;
     font-size: 12px;
-    top: 15vh;
+    top: 140px;
+    background-color: white;
+    z-index: 2;
+  }
+  .input {
+    left: 0px;
+    top: 200px;
+    width: 50vw;
+  }
+  input[type=file] {
+    font-size: 10px;
+  }
+  input[type=submit] {
+    width: 50%;
+    font-size: 18px;
+  }
+  .preview {
+    margin-top: 220px;
   }
 }
 

@@ -2,29 +2,22 @@ const form = document.getElementById("input");
 const imageInput = document.getElementById("image");
 const preview = document.getElementById("preview");
 
-// ---- IMAGE PREVIEW ----
+// Preview Image
 imageInput.addEventListener("change", () => {
   const file = imageInput.files[0];
-
-  if (!file || !file.type.startsWith("image/")) {
-    preview.src = "";
-    preview.style.display = "none";
-    return;
-  }
-
   const url = URL.createObjectURL(file);
-  preview.src = url;
-  preview.style.display = "block";
+ if (file) {
+    preview.src = url;
+    preview.style.display = "block";
+    preview.style.visibility = "visible";
+  }
 });
 
-// ---- FORM SUBMIT ----
+// Submit Form
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const formData = new FormData();
-  formData.append("itemName", document.getElementById("itemName").value);
-  formData.append("description", document.getElementById("description").value);
-  formData.append("image", imageInput.files[0]);
+  const formData = new FormData(form);
 
   try {
     const response = await fetch("save_item.php", {

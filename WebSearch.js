@@ -20,7 +20,7 @@ searchInput.addEventListener("input", async () => {
   displayItems(items);
 });
 
-// Display function (mostly unchanged)
+// Display function
 
 function displayItems(itemList) {
   resultsContainer.innerHTML = "";
@@ -40,7 +40,7 @@ function displayItems(itemList) {
       ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ""}
       <small>Reported: ${new Date(item.dateReported).toLocaleDateString()}</small>
       <br><br>
-      <button class="claim-btn" onclick="claimItem(${item.id})">Claim</button>
+      <button class="claimbtn" onclick="claimItem(${item.id})">Claim</button>
     `;
 
     resultsContainer.appendChild(card);
