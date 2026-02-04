@@ -35,7 +35,7 @@ form.addEventListener("submit", async (e) => {
       console.error("Failed to save item");
     }
   } catch (err) {
-    console.error("Error:", err);
+    console.log(err);
   }
 });
 
