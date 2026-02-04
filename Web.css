@@ -218,16 +218,19 @@ input[type=submit]:hover {
   border: 1px solid #ccc;
   padding: 15px;
   margin: 15px;
+  z-index: -1;
 }
 .item-card img {
   max-width: 200px;
   display: block;
   margin-top: 10px;
+  z-index: -1;
 }
 .results-container {
   width: 65vw;
   margin-left: auto;
   margin-right: auto;
+  z-index: -1
 }
 #claimpage {
   background-color: white !important;
@@ -268,6 +271,7 @@ input[type=submit]:hover {
     left: 0px;
     top: 200px;
     width: 50vw;
+    margin-left: 8vw;
   }
   input[type=file] {
     font-size: 10px;
@@ -283,6 +287,12 @@ input[type=submit]:hover {
   }
   .preview {
     margin-top: 220px;
+  }
+  .searchcontainer {
+    margin-top: 25vh;
+  }
+  .back {
+    margin-top: 26vh;
   }
 }
 
