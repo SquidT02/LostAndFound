@@ -1,31 +1,43 @@
-/* ===== Reset & Base ===== */
+
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   background: #f4f6f9;
   color: #1f2937;
+  overflow-y: auto;
 }
 
-/* ===== Page Grid ===== */
+/* =========================================================
+   PAGE GRID
+   ========================================================= */
 .page {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto auto auto auto 1fr auto;
 }
 
-/* ===== Top Accent ===== */
+/* =========================================================
+   TOP ACCENT
+   ========================================================= */
 .topbar {
   height: 8px;
-  background: #252A36;
+  background: #252a36;
 }
 
-/* ===== Header ===== */
+/* =========================================================
+   HEADER
+   ========================================================= */
 .title {
   display: flex;
   align-items: center;
@@ -50,9 +62,14 @@ html, body {
   color: #6b7280;
 }
 
-/* ===== Navigation (Darker + Animated Highlight) ===== */
+/* =========================================================
+   NAVIGATION (DARK + ANIMATED)
+   ========================================================= */
 .navc {
-  background: #1e222d; /* darker than accent */
+  background: #1e222d;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav {
@@ -64,26 +81,32 @@ html, body {
 
 .nav a {
   position: relative;
+  z-index: 0;
+
   color: #ffffff;
   text-decoration: none;
   font-size: 1.25rem;
   font-weight: 700;
+
   padding: 0.6rem 0.9rem;
   border-radius: 3px;
-  z-index: 0;
+
   transition: color 0.2s ease;
 }
 
-/* animated box */
+/* Animated highlight box */
 .nav a::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: #252A36;
+
+  background: #252a36;
   border-radius: 3px;
+
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s ease;
+
   z-index: -1;
 }
 
@@ -91,14 +114,22 @@ html, body {
   transform: scaleX(1);
 }
 
-.nav a:hover {
-  color: #ffffff;
+/* Active nav item */
+.nav a.light {
+  font-weight: 800;
+  box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* ===== Hero ===== */
+.nav a.light::before {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
 .hero {
   padding: 3rem 2.5rem;
-  background: linear-gradient(135deg, #252A36, #2f3545);
+  background: linear-gradient(135deg, #252a36, #2f3545);
   color: #ffffff;
 }
 
@@ -112,7 +143,190 @@ html, body {
   opacity: 0.9;
 }
 
-/* ===== Desktop Layout ===== */
+/* =========================================================
+   PREVIEW (HOMEPAGE)
+   ========================================================= */
+.preview {
+  padding: 2rem 1.75rem;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+}
+
+.preview h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#home-preview {
+  width: 72px;
+  height: 72px;
+
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 3px;
+
+  object-fit: cover;
+  flex-shrink: 0;
+
+  margin-bottom: 1rem;
+}
+
+.view-all {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #252a36;
+  text-decoration: none;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   INFO CARDS
+   ========================================================= */
+.cards {
+  padding: 3rem 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #252a36;
+  border-radius: 3px;
+
+  padding: 1.25rem 1.5rem;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-left-color 0.18s ease;
+}
+
+.card h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1.25rem;
+  color: #374151;
+  line-height: 1.55;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  border-left-color: #1e222d;
+}
+
+.card.clickable {
+  cursor: pointer;
+}
+
+/* =========================================================
+   SEARCH PAGE
+   ========================================================= */
+.back {
+  height: 0;
+}
+
+/* Sticky search bar */
+.searchcontainer {
+  position: sticky;
+  top: calc(1.4rem + 3.6rem);
+  z-index: 900;
+
+  background: #ffffff;
+  padding: 1rem 2.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.searchcontainer input[type="search"] {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+
+  padding: 0.85rem 1.1rem;
+  font-size: 1.05rem;
+
+  border-radius: 3px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.searchcontainer input::placeholder {
+  color: #9ca3af;
+}
+
+.searchcontainer input:focus {
+  outline: none;
+  border-color: #252a36;
+  box-shadow: 0 0 0 2px rgba(37, 42, 54, 0.15);
+  background: #ffffff;
+}
+
+/* =========================================================
+   SEARCH RESULTS
+   ========================================================= */
+.results-container {
+  padding: 2.5rem 3.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.results-container .card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.results-container img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+
+  border-radius: 3px;
+  border: 1px solid #e5e7eb;
+}
+
+.results-container h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.results-container p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  padding: 0.9rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (min-width: 900px) {
   .page {
     grid-template-columns: 340px 1fr;
@@ -134,97 +348,6 @@ html, body {
   }
 }
 
-/* ===== Preview ===== */
-.preview {
-  padding: 2rem 1.75rem;
-  background: #ffffff;
-  border-right: 1px solid #e5e7eb;
-}
-
-.preview h2 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-#home-preview {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 3px;
-  padding: 1rem;
-  min-height: 120px;
-  margin-bottom: 1rem;
-}
-
-.view-all {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #252A36;
-  text-decoration: none;
-}
-
-.view-all:hover {
-  text-decoration: underline;
-}
-
-/* Info Cards */
-.cards {
-  padding: 3rem 3.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-.card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #252A36;
-  border-radius: 3px;
-  padding: 1.25rem 1.5rem;
-}
-
-.card h3 {
-  font-size: 1.45rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  font-size: 1.25rem;
-  color: #374151;
-  line-height: 1.55;
-}
-
-.card {
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    border-left-color 0.18s ease;
-  cursor: default;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  border-left-color: #1e222d;
-}
-
-/* Optional: clickable cards later */
-.card.clickable {
-  cursor: pointer;
-}
-
-/* ===== Footer ===== */
-.footer {
-  background: #ffffff;
-  border-top: 1px solid #e5e7eb;
-  text-align: center;
-  padding: 0.9rem;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-/* ===== Mobile Adjustments ===== */
 @media (max-width: 899px) {
   .nav {
     flex-direction: column;
@@ -237,7 +360,8 @@ html, body {
     align-items: flex-start;
   }
 
-  .cards {
+  .cards,
+  .results-container {
     padding: 2rem 1.5rem;
     gap: 1.5rem;
   }
@@ -246,131 +370,9 @@ html, body {
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
   }
-}
 
-/* =========================================================
-   SEARCH PAGE ADDITIONS
-   ========================================================= */
-
-/* Ensure body scrolls normally */
-body {
-  overflow-y: auto;
-}
-
-/* Backdrop spacer (if used visually later) */
-.back {
-  height: 0;
-}
-
-/* ===== Sticky Navigation ===== */
-.navc {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* ===== Sticky Search Bar ===== */
-.searchcontainer {
-  position: sticky;
-  top: calc(1.4rem + 3.6rem); 
-  /* accounts for nav height */
-  z-index: 900;
-
-  background: #ffffff;
-  padding: 1rem 2.5rem;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-/* Search input styling */
-.searchcontainer input[type="search"] {
-  width: 100%;
-  max-width: 900px;
-  display: block;
-  margin: 0 auto;
-
-  padding: 0.85rem 1.1rem;
-  font-size: 1.05rem;
-
-  border-radius: 3px;
-  border: 1px solid #d1d5db;
-  background: #f9fafb;
-
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.searchcontainer input::placeholder {
-  color: #9ca3af;
-}
-
-.searchcontainer input:focus {
-  outline: none;
-  border-color: #252A36;
-  box-shadow: 0 0 0 2px rgba(37, 42, 54, 0.15);
-  background: #ffffff;
-}
-
-/* ===== Results Container ===== */
-.results-container {
-  padding: 2.5rem 3.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-/* Result cards (reuse info card feel) */
-.results-container .card {
-  cursor: pointer;
-}
-
-/* ===== Active Nav State ===== */
-.nav a.light {
-  position: relative;
-  font-weight: 800;
-}
-
-/* ===== Active Navigation State ===== */
-.nav a.light {
-  position: relative;
-  color: #ffffff;
-  font-weight: 800;
-}
-
-/* persistent highlight box */
-.nav a.light::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #252A36;
-  border-radius: 3px;
-  z-index: -1;
-  transform: scaleX(1);
-}
-
-/* prevent hover animation from overriding active state */
-.nav a.light:hover::before {
-  transform: scaleX(1);
-}
-.nav a.light::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #252A36;
-  border-radius: 3px;
-  z-index: -1;
-}
-
-.nav a.light {
-  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.15);
-}
-/* ===== Mobile Adjustments ===== */
-@media (max-width: 899px) {
   .searchcontainer {
     padding: 0.9rem 1.25rem;
-  }
-
-  .results-container {
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
   }
 }
 
