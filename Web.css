@@ -161,7 +161,8 @@ body {
 #home-preview {
   width: 72px;
   height: 72px;
-
+  max-width: 90px;
+  max-height: 120px;
   background: #f9fafb;
   border: 1px solid #e5e7eb;
   border-radius: 3px;
