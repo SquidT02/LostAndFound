@@ -26,10 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ${imageHTML}
           <div class="preview-info">
             <h4>${item.name}</h4>
-            <p>${item.description || "No description provided."}</p>
-            <span class="preview-date">
-              Reported on ${new Date(item.dateReported).toLocaleDateString()}
-            </span>
           </div>
         </div>
       `;

@@ -32,18 +32,28 @@ body {
    ========================================================= */
 .topbar {
   height: 8px;
+  width: 100vw;
   background: #252a36;
 }
 
 /* =========================================================
    HEADER
    ========================================================= */
+
 .title {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   padding: 2rem 2.25rem;
-  background: #ffffff;
+
+  background:
+    linear-gradient(
+      315deg,
+      rgba(202, 173, 42, 0.17) 0%,
+      rgba(202, 173, 42, 0.04) 35%,
+      #ffffff 65%
+    );
+
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -148,10 +158,10 @@ body {
    ========================================================= */
 
 .preview-image {
-  width: 72px;
-  height: 72px;
-  max-width: 72px;
-  max-height: 72px;
+  width: 168px;
+  height: 168px;
+  max-width: 250px;
+  max-height: 250px;
 
   object-fit: cover;
   flex-shrink: 0;
@@ -172,8 +182,8 @@ body {
 }
 
 #home-preview {
-  width: 72px;
-  height: 72px;
+  width: 250px;
+  height: 250px;
 
   background: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -196,6 +206,19 @@ body {
   text-decoration: underline;
 }
 
+.link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #252a36;
+  text-decoration: none;
+  position: absolute;
+  bottom: 2em;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
 /* =========================================================
    INFO CARDS
    ========================================================= */
@@ -207,14 +230,24 @@ body {
 }
 
 .card {
-  background: #ffffff;
+  position: relative;
+  background:
+    linear-gradient(
+      315deg,
+      rgba(202, 173, 42, 0.28) 0%,
+      rgba(202, 173, 42, 0.10) 40%,
+      #ffffff 70%
+    );
+
   border: 1px solid #e5e7eb;
-  border-left: 4px solid #252a36;
+  border-left: 4px solid #252A36;
   border-radius: 3px;
 
   padding: 1.25rem 1.5rem;
 
-  transition: transform 0.18s ease, box-shadow 0.18s ease,
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
     border-left-color 0.18s ease;
 }
 
@@ -379,9 +412,13 @@ body {
     gap: 1.5rem;
   }
 
+  .card p {
+    font-size: 1rem;
+  }
+
   .preview {
-    border-right: none;
-    border-bottom: 1px solid #e5e7eb;
+    display: none;
+    visibility: hidden;
   }
 
   .searchcontainer {
